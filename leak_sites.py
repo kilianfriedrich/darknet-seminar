@@ -12,7 +12,7 @@ log_file = 'out/log.txt'
 def log(message: str, file=None):
     print(message, file=file)
     with open(log_file, 'a') as f:
-        f.write(message)
+        f.write(message + '\n')
 
 tor = session()
 tor.proxies.update({'http': tor_proxy, 'https': tor_proxy})
