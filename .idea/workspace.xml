@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Alle Indexer gescraped">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leak_sites.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/normalizer.py" afterDir="false" />
+    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/leak_sites.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/posts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ransomdb.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ransomfeed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kilianfriedrich"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kilianfriedrich/darknet-seminar.git",
+    "accountId": "458ad076-7901-41be-b097-acd8944ce2aa"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -73,6 +80,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deepdarkcti, reddit und ransomwatch angebunden" />
     <MESSAGE value="Alle Indexer gescraped" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alle Indexer gescraped" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

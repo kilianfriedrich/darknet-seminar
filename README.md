@@ -23,3 +23,9 @@ Quellen
 
 - https://github.com/DedSecInside/TorBot
 - https://github.com/apurvsinghgautam/dark-web-osint-tools
+
+Starten
+-------
+
+Das Git-Repo kann auf dem Server geklont werden.
+Dann kann jupyter mit `jupyter lab --ip 0.0.0.0` gestartet und über die angegebene Adresse aufgerufen werden.
