@@ -50,7 +50,7 @@ for row in deepdarkcti_reader:
         deepdarkcti['AvailableLabel'].append('ONLINE' in row['Status'])
         log(f"Checking {parsed_name.group(1)} ({parsed_name.group(2)})")
         try:
-            tor.get(parsed_name.group(2))
+            tor.get(parsed_name.group(2), timeout=60)
             deepdarkcti['Available'].append(True)
         except:
             deepdarkcti['Available'].append(False)
@@ -75,7 +75,7 @@ for p in reddit2024_soup:
         reddit2024['Link'].append(parsed_text.group(2).strip())
         log(f"Checking {parsed_text.group(1).strip()} ({parsed_text.group(2).strip()})")
         try:
-            tor.get(parsed_text.group(2).strip())
+            tor.get(parsed_text.group(2).strip(), timeout=60)
             reddit2024['Available'].append(True)
         except:
             reddit2024['Available'].append(False)
@@ -100,7 +100,7 @@ for row in darknet_soup:
         darknet['Link'].append(link.attrs['href'])
         log(f"Checking {name.text} ({link.attrs['href']})")
         try:
-            tor.get(link.attrs['href'])
+            tor.get(link.attrs['href'], timeout=60)
             darknet['Available'].append(True)
         except:
             darknet['Available'].append(False)
@@ -132,7 +132,7 @@ for row in ransomwatch_reader:
         ransomwatch['AvailableLabel'].append(False)
     log(f"Checking {parsed_name.group(1)} ({row[' location ']})")
     try:
-        tor.get(row[' location '])
+        tor.get(row[' location '], timeout=60)
         ransomwatch['Available'].append(True)
     except:
         ransomwatch['Available'].append(False)
@@ -161,7 +161,7 @@ for row in ransomfind_reader:
     ransomfind['AvailableLabel'].append('🟢' in row[' status '])
     log(f"Checking {parsed_name.group(1)} ({row[' location '].strip()})")
     try:
-        tor.get(row[' location '].strip())
+        tor.get(row[' location '].strip(), timeout=60)
         ransomfind['Available'].append(True)
     except:
         ransomfind['Available'].append(False)
@@ -187,7 +187,7 @@ for header in ransomlook_soup.css.select('h3'):
             ransomlook['AvailableLabel'].append('⬆️' in link.css.select_one('td:nth-child(2)').text)
             log(f"Checking {header.text} ({link.css.select_one('td:nth-child(4)').text})")
             try:
-                tor.get(link.css.select_one('td:nth-child(4)').text)
+                tor.get(link.css.select_one('td:nth-child(4)').text, timeout=60)
                 ransomlook['Available'].append(True)
             except:
                 ransomlook['Available'].append(False)
@@ -218,7 +218,7 @@ for row in ransomfeed_soup:
         ransomfeed['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(3)').text)
         log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(1)').text})")
         try:
-            tor.get(ro.css.select_one('td:nth-child(1)').text)
+            tor.get(ro.css.select_one('td:nth-child(1)').text, timeout=60)
             ransomfeed['Available'].append(True)
         except:
             ransomfeed['Available'].append(False)
@@ -247,7 +247,7 @@ for row in ransomwarelive_soup:
         ransomwarelive['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(2)').text)
         log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(4)').text})")
         try:
-            tor.get(ro.css.select_one('td:nth-child(4)').text)
+            tor.get(ro.css.select_one('td:nth-child(4)').text, timeout=60)
             ransomwarelive['Available'].append(True)
         except:
             ransomwarelive['Available'].append(False)
