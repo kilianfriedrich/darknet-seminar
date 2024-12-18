@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/leak_sites.py" afterDir="false" />
+    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Timeout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leak_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/leak_sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +80,9 @@
     <MESSAGE value="deepdarkcti, reddit und ransomwatch angebunden" />
     <MESSAGE value="Alle Indexer gescraped" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="py-Datei" />
+    <MESSAGE value="Newline im Log" />
+    <MESSAGE value="Timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timeout" />
   </component>
 </project>

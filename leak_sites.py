@@ -42,7 +42,8 @@ for row in deepdarkcti_reader:
             'eCrime Services',
             'RANSOM DB',
             'RANSOMWARE GROUP SITES (list)',
-            'RANSOMWARE GROUPS MONITORING TOOL'
+            'RANSOMWARE GROUPS MONITORING TOOL',
+            'RansomChats'
         ]:
             continue
         deepdarkcti['Group'].append(parsed_name.group(1))
