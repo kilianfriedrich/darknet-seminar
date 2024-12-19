@@ -24,60 +24,63 @@ else:
     log('❌ You are NOT using Tor!', file=stderr)
     exit(1)
 
-# [Ransomfeed](https://ransomfeed.it)
 
-import bs4
+import csv
 
-ransomfeed = { 'Group': [], 'Link': [], 'Available': [], 'AvailableLabel': [] }
-ransomfeed_soup = bs4.BeautifulSoup(get('https://ransomfeed.it/stats.php?page=groups-stats').text)
-ransomfeed_soup = ransomfeed_soup.find('tbody')
-ransomfeed_soup = ransomfeed_soup.css.select('tr')
+ransomwatch_md = get('https://ransomwatch.telemetry.ltd/INDEX.md').text
+lines = ransomwatch_md.splitlines()[2:-1]
+lines.pop(1) # Header-Endzeile entfernen
+lines = [line.strip('|') for line in lines] # '|' Am Anfang und Ende der Zeile entfernen
 
-for row in ransomfeed_soup:
-    name = row.css.select_one('a')
-    group_soup = bs4.BeautifulSoup(get(f"https://ransomfeed.it/{name.attrs['href']}").text)
-    card = group_soup.css.select_one('.card:nth-child(3)')
-    if card is None:
+ransomwatch_reader = csv.DictReader(lines, delimiter='|')
+
+ransomwatch = { 'Group': [], 'Available': [], 'Link': [], 'AvailableLabel': [] }
+for row in ransomwatch_reader:
+    if len(row[' group '].strip()) == 0:
         continue
-    for ro in card.css.select('tr:not(:first-child)'):
-        ransomfeed['Group'].append(name.text)
-        ransomfeed['Link'].append(ro.css.select_one('td:nth-child(1)').text)
-        ransomfeed['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(3)').text)
-        log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(1)').text})")
-        try:
-            tor.get('http://' + ro.css.select_one('td:nth-child(1)').text.strip('.'), timeout=60)
-            ransomfeed['Available'].append(True)
-        except:
-            ransomfeed['Available'].append(False)
+    parsed_name = re.search(r"\[([^]]*)]\(([^)]*)\)", row[' group '])
+    ransomwatch['Group'].append(parsed_name.group(1))
+    ransomwatch['Link'].append(row[' location '])
+    if row[' status '] is not None:
+        ransomwatch['AvailableLabel'].append('🟢' in row[' status '])
+    else:
+        ransomwatch['AvailableLabel'].append(False)
+    log(f"Checking {parsed_name.group(1)} ({row[' location ']})")
+    try:
+        tor.get('http' + row[' location '], timeout=60)
+        ransomwatch['Available'].append(True)
+    except:
+        ransomwatch['Available'].append(False)
 
-ransomfeed = pd.DataFrame(ransomfeed)
-ransomfeed.to_csv('out/ransomfeed.csv', index=False)
 
-# [ransomwarelive](https://www.ransomware.live)
+ransomwatch = pd.DataFrame(ransomwatch)
+ransomwatch['Available'] = ransomwatch['Available'].astype('bool')
+ransomwatch.to_csv('out/ransomwatch.csv', index=False)
 
-import bs4
+# [Ransomfind](https://ransomfind.io)
 
-ransomwarelive = { 'Group': [], 'Link': [], 'Available': [], 'AvailableLabel': [] }
-ransomwarelive_soup = bs4.BeautifulSoup(get('https://www.ransomware.live/groups/').text)
-ransomwarelive_soup = ransomwarelive_soup.find('tbody')
-ransomwarelive_soup = ransomwarelive_soup.css.select('tr')
+import csv
 
-for row in ransomwarelive_soup:
-    name = row.css.select_one('a')
-    group_soup = bs4.BeautifulSoup(get(f"https://www.ransomware.live{name.attrs['href']}").text)
-    card = group_soup.css.select_one('tbody')
-    if card is None:
-        continue
-    for ro in card.css.select('tr'):
-        ransomwarelive['Group'].append(name.text)
-        ransomwarelive['Link'].append(ro.css.select_one('td:nth-child(4)').text)
-        ransomwarelive['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(2)').text)
-        log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(4)').text})")
-        try:
-            tor.get('http://' + ro.css.select_one('td:nth-child(4)').text.strip('.'), timeout=60)
-            ransomwarelive['Available'].append(True)
-        except:
-            ransomwarelive['Available'].append(False)
+ransomfind_md = get('https://ransomfind.io/INDEX.md').text
+lines = ransomfind_md.splitlines()[2:-1]
+lines.pop(1) # Header-Endzeile entfernen
+lines = [line.strip('|') for line in lines] # '|' Am Anfang und Ende der Zeile entfernen
 
-ransomwarelive = pd.DataFrame(ransomfeed)
-ransomwarelive.to_csv('out/ransomwarelive.csv', index=False)
+ransomfind_reader = csv.DictReader(lines, delimiter='|')
+
+ransomfind = { 'Group': [], 'Available': [], 'Link': [], 'AvailableLabel': [] }
+for row in ransomfind_reader:
+    parsed_name = re.search(r"\[([^]]*)]\(([^)]*)\)", row[' group '])
+    ransomfind['Group'].append(parsed_name.group(1))
+    ransomfind['Link'].append(row[' location '].strip())
+    ransomfind['AvailableLabel'].append('🟢' in row[' status '])
+    log(f"Checking {parsed_name.group(1)} ({row[' location '].strip()})")
+    try:
+        tor.get('http' + row[' location '].strip(), timeout=60)
+        ransomfind['Available'].append(True)
+    except:
+        ransomfind['Available'].append(False)
+
+ransomfind = pd.DataFrame(ransomfind)
+ransomfind['Available'] = ransomfind['Available'].astype('bool')
+ransomfind.to_csv('out/ransomfind.csv', index=False)
