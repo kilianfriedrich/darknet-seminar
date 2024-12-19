@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Ransomfeed gefixt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leak_sites.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/leak_sites.ipynb" afterDir="false" />
+    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Http für ransomwatch &amp; ...find">
+      <change beforePath="$PROJECT_DIR$/leak_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/leak_sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +75,17 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deepdarkcti, reddit und ransomwatch angebunden" />
     <MESSAGE value="Alle Indexer gescraped" />
@@ -85,6 +95,7 @@
     <MESSAGE value="Timeout" />
     <MESSAGE value="RansomChats ausgenommen" />
     <MESSAGE value="Ransomfeed gefixt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ransomfeed gefixt" />
+    <MESSAGE value="Http für ransomwatch &amp; ...find" />
+    <option name="LAST_COMMIT_MESSAGE" value="Http für ransomwatch &amp; ...find" />
   </component>
 </project>

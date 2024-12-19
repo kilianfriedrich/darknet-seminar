@@ -47,7 +47,7 @@ for row in ransomwatch_reader:
         ransomwatch['AvailableLabel'].append(False)
     log(f"Checking {parsed_name.group(1)} ({row[' location ']})")
     try:
-        tor.get('http' + row[' location '], timeout=60)
+        tor.get('http://' + row[' location '].strip(), timeout=60)
         ransomwatch['Available'].append(True)
     except:
         ransomwatch['Available'].append(False)
@@ -76,7 +76,7 @@ for row in ransomfind_reader:
     ransomfind['AvailableLabel'].append('🟢' in row[' status '])
     log(f"Checking {parsed_name.group(1)} ({row[' location '].strip()})")
     try:
-        tor.get('http' + row[' location '].strip(), timeout=60)
+        tor.get('http://' + row[' location '].strip(), timeout=60)
         ransomfind['Available'].append(True)
     except:
         ransomfind['Available'].append(False)
