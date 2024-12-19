@@ -45,7 +45,7 @@ for row in ransomfeed_soup:
         ransomfeed['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(3)').text)
         log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(1)').text})")
         try:
-            tor.get(ro.css.select_one('td:nth-child(1)').text, timeout=60)
+            tor.get('http://' + ro.css.select_one('td:nth-child(1)').text, timeout=60)
             ransomfeed['Available'].append(True)
         except:
             ransomfeed['Available'].append(False)
@@ -74,7 +74,7 @@ for row in ransomwarelive_soup:
         ransomwarelive['AvailableLabel'].append('🟢' in ro.css.select_one('td:nth-child(2)').text)
         log(f"Checking {name.text} ({ro.css.select_one('td:nth-child(4)').text})")
         try:
-            tor.get(ro.css.select_one('td:nth-child(4)').text, timeout=60)
+            tor.get('http://' + ro.css.select_one('td:nth-child(4)').text, timeout=60)
             ransomwarelive['Available'].append(True)
         except:
             ransomwarelive['Available'].append(False)
