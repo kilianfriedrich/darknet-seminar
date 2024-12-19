@@ -29,8 +29,7 @@ else:
 import bs4
 
 ransomfeed = { 'Group': [], 'Link': [], 'Available': [], 'AvailableLabel': [] }
-with open('ransomfeed.html', 'r') as f:
-    ransomfeed_soup = bs4.BeautifulSoup(f.read())
+ransomfeed_soup = bs4.BeautifulSoup(get('https://ransomfeed.it/stats.php?page=groups-stats').text)
 ransomfeed_soup = ransomfeed_soup.find('tbody')
 ransomfeed_soup = ransomfeed_soup.css.select('tr')
 
