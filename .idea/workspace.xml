@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="RansomChats ausgenommen">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Ransomfeed gefixt">
+      <change beforePath="$PROJECT_DIR$/leak_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/leak_sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,18 +27,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kilianfriedrich"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kilianfriedrich&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kilianfriedrich/darknet-seminar.git",
-    "accountId": "458ad076-7901-41be-b097-acd8944ce2aa"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kilianfriedrich/darknet-seminar.git&quot;,
+    &quot;accountId&quot;: &quot;458ad076-7901-41be-b097-acd8944ce2aa&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -83,6 +83,7 @@
     <MESSAGE value="Newline im Log" />
     <MESSAGE value="Timeout" />
     <MESSAGE value="RansomChats ausgenommen" />
-    <option name="LAST_COMMIT_MESSAGE" value="RansomChats ausgenommen" />
+    <MESSAGE value="Ransomfeed gefixt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ransomfeed gefixt" />
   </component>
 </project>

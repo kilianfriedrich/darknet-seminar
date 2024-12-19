@@ -36,7 +36,7 @@ ransomfeed_soup = ransomfeed_soup.css.select('tr')
 
 for row in ransomfeed_soup:
     name = row.css.select_one('a')
-    group_soup = bs4.BeautifulSoup(get(f"https://ransomfeed.it{name.attrs['href']}").text)
+    group_soup = bs4.BeautifulSoup(get(f"https://ransomfeed.it/{name.attrs['href']}").text)
     card = group_soup.css.select_one('.card:nth-child(3)')
     if card is None:
         continue
