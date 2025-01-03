@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Http für ransomwatch &amp; ...find">
+    <list default="true" id="d821d049-f63a-49cf-b007-96e3ca0e1951" name="Changes" comment="Script wieder hergestellt">
+      <change afterPath="$PROJECT_DIR$/script/tracked_status.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leak_sites.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/leak_sites.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/normalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/normalizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leak_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ransomfeed.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +101,8 @@
     <MESSAGE value="RansomChats ausgenommen" />
     <MESSAGE value="Ransomfeed gefixt" />
     <MESSAGE value="Http für ransomwatch &amp; ...find" />
-    <option name="LAST_COMMIT_MESSAGE" value="Http für ransomwatch &amp; ...find" />
+    <MESSAGE value="Analyse außer Posts" />
+    <MESSAGE value="Script wieder hergestellt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Script wieder hergestellt" />
   </component>
 </project>
